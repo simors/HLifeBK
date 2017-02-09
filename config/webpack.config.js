@@ -19,7 +19,10 @@ const webpackConfig = {
     root       : project.paths.client(),
     extensions : ['', '.js', '.jsx', '.json']
   },
-  module : {}
+  module : {},
+  plugins: [
+    ['import', [{ libraryName: "antd", style: 'css' }]],
+  ],
 }
 // ------------------------------------
 // Entry Points

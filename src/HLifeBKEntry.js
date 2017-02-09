@@ -32,7 +32,8 @@ class AppContainer extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div style={{flex: 1, flexDirection: 'row',alignItems:'center',justifyContent:'center',width:375}}>
+        <div style={{flex: 1, flexDirection: 'row',alignItems:'center',justifyContent:'center',width:800}}>
+
           <RouterWithRoutes />
         </div>
       </Provider>

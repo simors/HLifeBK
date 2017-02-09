@@ -7,6 +7,8 @@ import {bindActionCreators} from 'redux'
 import {setPrivilege} from '../../actions/configActions'
 import { IndexLink, Link } from 'react-router'
 import Header from '../Header'
+import {Layout,Sider,Button} from 'antd'
+import 'antd/dist/antd.css'
 
 class HomePage extends Component {
   constructor(props) {
@@ -19,13 +21,14 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div onClick={() => this.privilege()}>
+      <div>
+
         <Header/>
 
         <Link to='/login' activeClassName='route--active'>
           login
         </Link>
-        Hello!
+          <Button type="dashed"  onClick={() => this.privilege()}>Search</Button>
       </div>
     )
   }
