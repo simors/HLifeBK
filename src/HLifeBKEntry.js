@@ -8,6 +8,7 @@ import RouterWithRoutes from './routes'
 import AV from 'leancloud-storage'
 import * as LC_CONFIG from './constants/appConfig'
 import {persistor, store} from './store/persistStore'
+import Header from './components/Header'
 
 const KM_Dev = {
   appId: LC_CONFIG.LC_DEV_APP_ID,
@@ -31,7 +32,7 @@ class AppContainer extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div style={{flex: 1, flexDirection: 'row'}}>
+        <div style={{flex: 1, flexDirection: 'row',alignItems:'center',justifyContent:'center',width:375}}>
           <RouterWithRoutes />
         </div>
       </Provider>

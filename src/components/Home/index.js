@@ -5,6 +5,8 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {setPrivilege} from '../../actions/configActions'
+import { IndexLink, Link } from 'react-router'
+import Header from '../Header'
 
 class HomePage extends Component {
   constructor(props) {
@@ -18,6 +20,11 @@ class HomePage extends Component {
   render() {
     return (
       <div onClick={() => this.privilege()}>
+        <Header/>
+
+        <Link to='/login' activeClassName='route--active'>
+          login
+        </Link>
         Hello!
       </div>
     )
