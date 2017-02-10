@@ -42,7 +42,7 @@ export default class Frame extends Component{
     return(
       <Layout>
         <Header className="header" style={{flex:1,flexDirection:'row'}}>
-          <div className="logo" />
+          <div className="logo" ></div>
           <Menu
             theme="dark"
             mode="horizontal"
@@ -59,11 +59,7 @@ export default class Frame extends Component{
           </Menu>
         </Header>
         <Content style={{ padding: '0 50px' }}>
-          <Breadcrumb style={{ margin: '12px 0' }}>
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
-            <Breadcrumb.Item>List</Breadcrumb.Item>
-            <Breadcrumb.Item>App</Breadcrumb.Item>
-          </Breadcrumb>
+
           <Layout style={{ padding: '24px 0', background: '#fff' }}>
             <Sider width={200} style={{ background: '#fff' }}>
               <Menu
@@ -98,7 +94,7 @@ export default class Frame extends Component{
           </Layout>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
-          Ant Design ©2016 Created by Ant UED
+          Design ©2017 Created by Simor Technology
         </Footer>
       </Layout>
     )
