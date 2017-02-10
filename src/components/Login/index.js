@@ -15,12 +15,13 @@ export default class Login extends Component {
   render(){
     return(
       <div>
-        <Header/>
+        <Header>
 
         <text>this is Login</text>
         <IndexLink to='/' activeClassName='route--active'>
           that is Home
         </IndexLink>
+          </Header>
       </div>
     )
   }
