@@ -19,6 +19,7 @@ export default class Frame extends Component{
     super(props)
     this.state={
       menuIndex:0
+
     }
   }
   chooseMenu (index){
@@ -27,17 +28,29 @@ export default class Frame extends Component{
     })
   }
   renderContent(){
-    if(this.state.menuIndex == 1) {
+    if(this.state.menuIndex == 0) {
       return (
         <Home></Home>
       )
     }
-    if(this.state.menuIndex == 2) {
+    if(this.state.menuIndex == 1) {
       return (
         <Article/>
       )
     }
   }
+//
+// const menuList = {
+//     backgroundManager:['资金管理','人员管理'],
+//     doctorManager:['医生审核'],
+//     shopManager:['店铺审核','店铺关闭','店铺开张'],
+//     articleManager:['文章失效','栏目管理','文章更新','文章发布',],
+//     topicManager:['话题发布','话题更新'],
+//     activity:['活动新建','活动关闭','活动设计','活动开启',],
+//   }
+
+
+
   render(){
     return(
       <Layout>
@@ -50,10 +63,12 @@ export default class Frame extends Component{
             style={{ lineHeight: '64px' }}
           >
             <Menu.Item key="1">
-              <Button onClick={()=>this.chooseMenu(1)}>Home</Button>
+              <Link to='/login' activeClassName='route--active'>
+                toLogin
+              </Link>
             </Menu.Item>
             <Menu.Item key="2">
-              <Button onClick={()=>this.chooseMenu(2)}>文章管理</Button>
+              <Button onClick={()=>this.chooseMenu(1)}>文章管理</Button>
             </Menu.Item>
             <Menu.Item key="3">我还没什么用</Menu.Item>
           </Menu>
@@ -69,8 +84,12 @@ export default class Frame extends Component{
                 style={{ height: '100%' }}
               >
                 <SubMenu key="sub1" title={<span><Icon type="user" />subnav 1</span>}>
-                  <Menu.Item key="1">option1</Menu.Item>
-                  <Menu.Item key="2">option2</Menu.Item>
+                  <Menu.Item key="1" o>
+                    <div onClick={()=>this.chooseMenu(0)}>Home</div>
+                  </Menu.Item>
+                  <Menu.Item key="2" >
+                    <div onClick={()=>this.chooseMenu(1)}>文章管理</div>
+                  </Menu.Item>
                   <Menu.Item key="3">option3</Menu.Item>
                   <Menu.Item key="4">option4</Menu.Item>
                 </SubMenu>
