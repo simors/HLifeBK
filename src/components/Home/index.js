@@ -9,10 +9,15 @@ import { IndexLink, Link } from 'react-router'
 import Header from '../Header'
 import {Layout,Menu,Breadcrumb,Button} from 'antd'
 import 'antd/dist/antd.css'
+import {getPrivilege} from '../../selectors/configSelector'
 
 class HomePage extends Component {
   constructor(props) {
     super(props)
+  }
+
+  componentDidMount(){
+    this.props.setPrivilege({phone:'13974837930',password:'13974837930'})
   }
 
   privilege() {
@@ -32,8 +37,11 @@ class HomePage extends Component {
 
 
 const mapStateToProps = (state, ownProps) => {
-  let newProps = {}
-  return newProps
+  const menuList=getPrivilege(state)
+  console.log('menuList==>',menuList)
+  return {
+    menuList:menuList
+  }
 }
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({

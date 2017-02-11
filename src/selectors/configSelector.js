@@ -1,9 +1,14 @@
 /**
  * Created by yangyang on 2017/2/9.
  */
-import {List, Map} from 'immutable'
+import {List, Record,Map} from 'immutable'
 
+export function getConfig(state){
+  console.log('here')
+  return state.CONFIG
+}
 export function getPrivilege(state) {
-  let privilege = state.CONFIG.privilege
-  return privilege
+
+  let privilege = getConfig(state).privilege|| []
+  return privilege.toJS()
 }

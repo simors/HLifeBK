@@ -20,8 +20,9 @@ export default function configReducer(state = initialState, action) {
 }
 
 function setPrivilege(state, action) {
-  let privilege = new PrivilegeConfig({modifyColumn: true})
-  state = state.set('privilege', privilege)
+  //let privilege = new PrivilegeConfig({modifyColumn: true})
+  let payload = action.payload
+  state = state.set('privilege', payload)
   return state
 }
 
