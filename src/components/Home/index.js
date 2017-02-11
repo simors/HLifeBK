@@ -16,13 +16,14 @@ class HomePage extends Component {
     super(props)
   }
 
-  componentDidMount(){
-    this.props.setPrivilege({phone:'13974837930',password:'13974837930'})
-  }
+  // componentDidMount(){
+  //   this.props.setPrivilege({phone:'13974837930',password:'13974837930'})
+  // }
 
   privilege() {
     this.props.setPrivilege({})
   }
+
   rendHome(){
     return(
       <div>hahahahahahaha</div>
@@ -37,10 +38,10 @@ class HomePage extends Component {
 
 
 const mapStateToProps = (state, ownProps) => {
-  const menuList=getPrivilege(state)
-  console.log('menuList==>',menuList)
+  // const menuList=getPrivilege(state)
+  // console.log('menuList==>',menuList)
   return {
-    menuList:menuList
+    // menuList:menuList
   }
 }
 

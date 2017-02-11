@@ -10,6 +10,9 @@ import 'antd/dist/antd.css'
 import './frame.scss'
 import Home from '../Home'
 import Article from '../Article'
+import {getPrivilege} from '../../selectors/configSelector'
+import {setPrivilege} from '../../actions/configActions'
+
 
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
@@ -22,7 +25,8 @@ const menuList = {
   activity:['活动新建','活动关闭','活动设计','活动开启',],
 }
 
-export default class Frame extends Component{
+
+ class Frame extends Component{
   constructor(props){
     super(props)
     this.state={
@@ -30,6 +34,11 @@ export default class Frame extends Component{
 
     }
   }
+
+   componentDidMount(){
+     this.props.setPrivilege({phone:'13974837930',password:'13974837930'})
+   }
+
   chooseMenu (index){
     this.setState({
       menuIndex: index
@@ -120,3 +129,18 @@ export default class Frame extends Component{
     )
   }
 }
+
+
+const mapStateToProps = (state, ownProps) => {
+  const menuList=getPrivilege(state)
+  console.log('menuList==>',menuList)
+  return {
+    menuList:menuList
+  }
+}
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  setPrivilege,
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Frame)
