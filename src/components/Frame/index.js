@@ -13,6 +13,14 @@ import Article from '../Article'
 
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
+const menuList = {
+  backgroundManager:['资金管理','人员管理'],
+  doctorManager:['医生审核'],
+  shopManager:['店铺审核','店铺关闭','店铺开张'],
+  articleManager:['文章失效','栏目管理','文章更新','文章发布',],
+  topicManager:['话题发布','话题更新','精选加工'],
+  activity:['活动新建','活动关闭','活动设计','活动开启',],
+}
 
 export default class Frame extends Component{
   constructor(props){
@@ -40,14 +48,7 @@ export default class Frame extends Component{
     }
   }
 //
-// const menuList = {
-//     backgroundManager:['资金管理','人员管理'],
-//     doctorManager:['医生审核'],
-//     shopManager:['店铺审核','店铺关闭','店铺开张'],
-//     articleManager:['文章失效','栏目管理','文章更新','文章发布',],
-//     topicManager:['话题发布','话题更新'],
-//     activity:['活动新建','活动关闭','活动设计','活动开启',],
-//   }
+
 
 
 
