@@ -30,13 +30,23 @@ const menuList = {
   constructor(props){
     super(props)
     this.state={
-      menuIndex:0
-
+      menuIndex:0,
+      menukey :0
     }
   }
 
    componentDidMount(){
      this.props.setPrivilege({phone:'13974837930',password:'13974837930'})
+   }
+
+   renderBackManager(){
+     let menuChildren = ''
+     let menuList = this.props.menuList
+     for(var i=0; i<menuList.length;i++){
+       if(menuList[i].permission==''){
+         menuChildren+=' <Menu.Item key="1" o> <div onClick={()=>this.chooseMenu(0)}>Home</div> </Menu.Item>'
+       }
+     }
    }
 
   chooseMenu (index){
