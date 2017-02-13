@@ -10,6 +10,7 @@ import Header from '../Header'
 import {Layout,Menu,Breadcrumb,Button} from 'antd'
 import 'antd/dist/antd.css'
 import {getPrivilege} from '../../selectors/configSelector'
+import Frame from '../Frame'
 
 class HomePage extends Component {
   constructor(props) {
@@ -31,7 +32,9 @@ class HomePage extends Component {
   }
   render() {
     return (
-      <div>I'm Home</div>
+      <Frame menuTitle='Home'>
+        <div>I'm Home</div>
+      </Frame>
     )
   }
 }

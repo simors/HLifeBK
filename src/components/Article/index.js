@@ -4,7 +4,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-
+import Frame from '../Frame'
 
 
 export default class Article extends Component{
@@ -13,9 +13,11 @@ export default class Article extends Component{
   }
   render(){
     return(
+      <Frame menuTitle='article'>
       <div>
         I'm Article
       </div>
+        </Frame>
     )
   }
 }

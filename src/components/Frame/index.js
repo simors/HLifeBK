@@ -99,16 +99,22 @@ const menuList = {
             <Sider width={200} style={{ background: '#fff' }}>
               <Menu
                 mode="inline"
-                defaultSelectedKeys={['1']}
+                defaultSelectedKeys={[this.props.menuTitle]}
                 defaultOpenKeys={['sub1']}
                 style={{ height: '100%' }}
               >
                 <SubMenu key="sub1" title={<span><Icon type="user" />subnav 1</span>}>
-                  <Menu.Item key="1" o>
-                    <div onClick={()=>this.chooseMenu(0)}>Home</div>
+                  <Menu.Item key="Home" >
+                    {/*<div onClick={()=>this.chooseMenu(0)}>Home</div>*/}
+                    <IndexLink to='/' activeClassName='route--active'>首页
+                    </IndexLink>
                   </Menu.Item>
-                  <Menu.Item key="2" >
-                    <div onClick={()=>this.chooseMenu(1)}>文章管理</div>
+                  <Menu.Item key="article" >
+                    {/*<div onClick={()=>this.chooseMenu(1)}>文章管理</div>*/}
+
+                    <IndexLink to='/article' activeClassName='route--active'>
+                      文章管理
+                    </IndexLink>
                   </Menu.Item>
                   <Menu.Item key="3">option3</Menu.Item>
                   <Menu.Item key="4">option4</Menu.Item>
@@ -128,7 +134,7 @@ const menuList = {
               </Menu>
             </Sider>
             <Content style={{ padding: '0 24px', minHeight: 280 }}>
-              {this.renderContent()}
+              {this.props.children}
             </Content>
           </Layout>
         </Content>
